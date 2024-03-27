@@ -1,0 +1,9 @@
+.inputCSS {
+  min-height: 40px;
+  min-width: 52%;
+  border-radius: 9px;
+  padding-left: 5px;
+  margin: 5px;
+  font-size: medium;
+  border: none;
+}

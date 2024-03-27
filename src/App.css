@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.app{
+  background-color: #008470;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+}
+.pag{
+  width: 90%;
+  display: flex;
+  margin: 10px;
+  height: 78%;
+  padding: 10px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
