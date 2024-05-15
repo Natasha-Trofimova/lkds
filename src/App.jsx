@@ -3,6 +3,8 @@ import Main from './Pages/Main'
 import Show from './Pages/Show'
 import { Device } from './Context/Device'
 import { useState } from 'react'
+import Hat from './Components/Hat-Basement/Hat'
+import Basement from './Components/Hat-Basement/Basement'
 
 function App() {
 
@@ -11,13 +13,10 @@ function App() {
   const [switches7, setSwitches7] = useState('')
   const [switches8, setSwitches8] = useState('')
 
-
-
-
   return (
     <>
       <div className='app'>
-        шапка<br />
+        <Hat/>
         <Device.Provider
           value={{
             nameDevice,
@@ -35,7 +34,7 @@ function App() {
             <Show />
           </div>
         </Device.Provider>
-        подвал<br />
+        <Basement/>
       </div>
     </>
   )

@@ -6,26 +6,23 @@ import Switches5 from "../AZO1/Switches5"
 import Switches6 from "../AZO1/Switches6"
 import Switches7 from "../AZO1/Switches7"
 import Switches8 from "../AZO1/Switches8"
-
-import css from '../../Styled.css'
-const { TableCSS, DlineCSS2, Cell} = css
-
 import { useContext } from "react";
 import { Device } from "../../../../Context/Device";
+import css from '../../Styled.css'
+const { TableCSS, DlineCSS1, DlineCSS2, Cell, TableCSS1, Celltxt } = css
 
 function TableLineApy2n() {
   const { addressDevice } = useContext(Device);
   return (
     <>
+    <TableCSS1>
+    {addressDevice === "" && <Celltxt>Aдрес для данного устройства не выбран</Celltxt>}
+    {addressDevice < 188 &&  addressDevice !== "" &&<Celltxt>Aдрес для данного устройства не выбран</Celltxt>}
+    {addressDevice > 251 && <Celltxt>Aдрес для данного устройства не выбран</Celltxt>}
+    {addressDevice !== "" && addressDevice >= 188 && addressDevice <= 251 &&
+      (<>
     <TableCSS>
-    {addressDevice === "" && <Cell>адрес для данного устройства не выбран</Cell>}
-        {addressDevice < 188 &&  addressDevice !== "" &&<Cell>адрес для данного устройства не выбран</Cell>}
-        {addressDevice > 251 && <Cell>адрес для данного устройства не выбран</Cell>}
-          {addressDevice !== "" && 
-          addressDevice >= 188 &&
-          addressDevice <= 251 &&(
-            <>
-      <DlineCSS2>
+      <DlineCSS1>
         <Cell>A0</Cell>
         <Cell>A1</Cell>
         <Cell>A2</Cell>
@@ -34,7 +31,7 @@ function TableLineApy2n() {
         <Cell>A5</Cell>
         <Cell>A6</Cell>
         <Cell>R-CAN</Cell>
-      </DlineCSS2>
+      </DlineCSS1>
       <DlineCSS2>
         <Switches1 />
         <Switches2 />
@@ -45,9 +42,10 @@ function TableLineApy2n() {
         <Switches7 />
         <Switches8 />
       </DlineCSS2>
-      </>
-    )}
     </TableCSS>
+      </>)
+    }
+    </TableCSS1>
     </>
   )
 }

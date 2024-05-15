@@ -1,4 +1,3 @@
-import css from '../../Styled.css'
 import Switches1 from '../SwitchesAll/Switches1'
 import Switches2 from '../SwitchesAll/Switches2'
 import Switches3 from '../SwitchesAll/Switches3'
@@ -7,41 +6,39 @@ import Switches5 from '../SwitchesAll/Switches5'
 import { useContext } from "react";
 import { Device } from "../../../../Context/Device";
 
-
-const { TableCSS, DlineCSS2, Cell } = css
-
+import css from '../../Styled.css'
+const { TableCSS, DlineCSS1, DlineCSS2, Cell, TableCSS1, Celltxt } = css
 
 function TableLineModBUS() {
-
 const { addressDevice } = useContext(Device);
-
 return (
   <>
+  <TableCSS1>
+      {addressDevice === "" && addressDevice < 32 && <Celltxt>Aдрес для данного устройства не выбран</Celltxt>}
+      {addressDevice > 63 && <Celltxt>Адрес для данного устройства не выбран</Celltxt>}
+      {addressDevice !== "" && addressDevice >= 32 && addressDevice <= 63 && (
+        <>
     <TableCSS>
-      <DlineCSS2>
+          <DlineCSS1>
         <Cell>A0</Cell>
         <Cell>A1</Cell>
         <Cell>A2</Cell>
         <Cell>A3</Cell>
         <Cell>A4</Cell>
-      </DlineCSS2>
-      {addressDevice === "" && addressDevice < 32 && <Cell>адрес для данного устройства не выбран</Cell>}
-      {addressDevice > 63 && <Cell>адрес для данного устройства не выбран</Cell>}
-
-        {addressDevice !== "" && addressDevice >= 32 && addressDevice <= 63 && (
-          <>
-          <Cell>ON DIP</Cell> 
+          </DlineCSS1>
+        <Cell>ON DIP (1)</Cell> 
           <DlineCSS2>
-            <Switches1 />
-            <Switches2 />
-            <Switches3 />
-            <Switches4 />
-            <Switches5 />
+        <Switches1 />
+        <Switches2 />
+        <Switches3 />
+        <Switches4 />
+        <Switches5 />
           </DlineCSS2>
-          <Cell>OFF DIP</Cell>
+          <Cell>OFF DIP (0)</Cell>
+    </TableCSS>
         </>
       )}
-    </TableCSS>
+  </TableCSS1>
   </>
 );
 }

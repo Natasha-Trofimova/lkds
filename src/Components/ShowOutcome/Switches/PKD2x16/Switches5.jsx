@@ -9,7 +9,7 @@ function Switches5() {
 
   return (
     <>
-      {switches8 === "" && <Cell>5не выбран</Cell>}
+      {switches8 === "" && <Cell>не выбран</Cell>}
       {switches8 === "1" && <SliderOn><Slider>1</Slider></SliderOn>}
       {switches8 === "0" && <SliderOff><Slider>0</Slider></SliderOff>}
     </>
