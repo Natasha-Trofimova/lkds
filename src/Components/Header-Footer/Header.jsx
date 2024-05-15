@@ -2,7 +2,7 @@
 
 // const { ShowCss } = css;
 
-function Hat() {
+function Header() {
 
   return (
     <>
@@ -13,4 +13,4 @@ function Hat() {
   );
 }
 
-export default Hat;
+export default Header;

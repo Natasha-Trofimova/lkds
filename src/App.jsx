@@ -3,8 +3,8 @@ import Main from './Pages/Main'
 import Show from './Pages/Show'
 import { Device } from './Context/Device'
 import { useState } from 'react'
-import Hat from './Components/Hat-Basement/Hat'
-import Basement from './Components/Hat-Basement/Basement'
+import Footer from './Components/Header-Footer/Footer'
+import Header from './Components/Header-Footer/Header'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div className='app'>
-        <Hat/>
+        <Header/>
         <Device.Provider
           value={{
             nameDevice,
@@ -34,7 +34,7 @@ function App() {
             <Show />
           </div>
         </Device.Provider>
-        <Basement/>
+        <Footer/>
       </div>
     </>
   )

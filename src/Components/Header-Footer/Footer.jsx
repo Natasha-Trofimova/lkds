@@ -1,7 +1,6 @@
 import './Mini.css'
 
-function Basement() {
-  {/* подвал */}
+function Footer() {
   return (
     <>
     <div className='main'>
@@ -30,4 +29,4 @@ function Basement() {
 );
 }
 
-export default Basement;
+export default Footer;
